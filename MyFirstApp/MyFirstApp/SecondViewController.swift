@@ -8,21 +8,24 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-    let messageLabel = UILabel()
+
+    private let messageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "GLAMUUUUUUUUR!"
+        label.textColor = .systemPink
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 30)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setupLabel()
+        setupUI()
     }
 
-    private func setupLabel() {
-        messageLabel.text = "GLAMUUUUUUUUR!"
-        messageLabel.textColor = .systemPink
-        messageLabel.textAlignment = .center
-        messageLabel.font = UIFont.systemFont(ofSize: 30)
-        messageLabel.translatesAutoresizingMaskIntoConstraints = false
-
+    private func setupUI() {
         view.addSubview(messageLabel)
 
         NSLayoutConstraint.activate([
